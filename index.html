@@ -1,0 +1,640 @@
+    <!DOCTYPE html>
+
+<head>
+  <title>E-Comm Website by Code Step By Step</title>
+  <link href="learning_project.css" rel="stylesheet" />
+  <link href="common.css" rel="stylesheet" />
+  <!--<link href="learning_project.js" rel="stylesheet"/>-->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;1,100;1,300;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body onload="pageload()">
+  <!--<img class="bg" src="/images/makhi.jpg" alt="bg image">-->
+ 
+ 
+  <div class="wrapper">
+    <div class="header">
+      <div class="logo arrange-left wid-25">
+        <h1><span>KER'S</span><span>MALL</span></h1>
+      </div>
+      <div class="search-product arrange-left wid-50">
+<input  id="text" onkeyup="myFunction()" placeholder="Search for product" title="Type in a name" list="data">
+
+ 
+          
+       
+        <datalist id="data">
+          <option value="Shirt">shirt</option>
+          <option value="Pant">Pant</option>
+          <option value="T-Shirt">T-Shirt</option>
+           <option value="Shoes">Shoes</option>
+            <option value="Lengo">Lengo</option>
+           
+            
+        </datalist>
+       
+
+
+
+
+        
+        <button>
+          <i id="searchbtn"  class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </div>
+      <div class="selected-product arrange-left wid-25">
+        <button class="common-btn">
+          <span>
+            <i class="fa-solid fa-cart-arrow-down"></i>
+            0</span>
+        </button>
+        <button class="common-btn">
+          <span>
+            <i class="fa-solid fa-heart"></i>
+            0</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="full-banner-warapper">
+    <div class="shop-header">
+      <h1 id="para" class="para1">Your shopping Details</h1>
+      <h3>- Cart Details -</h3>
+    </div>
+    
+      
+    <div id="myUL"
+      
+  
+     <ul id="keyword_searcher1">
+  <li><img id="img" src="/MALL/brandedshirt.png" alt="" height="150px"><a href="#">Shirt</a></li>
+  <li><img id="img1" src="/MALL/lycrapant.jpg" alt="" height="150px"><a href="#">Pant</a></li>
+  <li><img src="/MALL/tshirt2.jpg" alt="" height="150px"><a href="#">T-Shirt</a></li>
+  <li><img src="/MALL/nikeshoes.jpg" alt="" height="150px"><a href="#">Shoes</a></li>
+
+  <li><img src="/MALL/summerlengo.jpg" alt="" height="150px"><a href="#">Lengo</a></li>
+  
+</ul>
+
+  
+</div>
+ <label for="Choose Clothes Type : ">Choose Clothes Type : </label>
+     
+    <select onchange="getOption()" name="clothes" id="clothes"
+    >
+
+ <option value="branded clothes">Branded Clothes</option>
+    <option value="summer clothes">Summer Clothes</option>
+    <option value="winter clothes">Winter Clothes</option>
+   
+  </select>
+     
+  <p id="output"> </p>
+ 
+ 
+ 
+ <!-- <div id="summercl" >
+    <span>hello</span>
+  </div>
+  
+  <button id="summmm">hide</button>
+  -->
+
+    <div class="wrapper next-row">
+      <div class="wid-75 arrange-left">
+        <div class="cart-details">
+          <table>
+            <thead>
+              <tr>
+                <th style="font-family:courier;">Product</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
+                <th>Remove</th>
+              </tr>
+            </thead>
+            <form id="form" method="POST" action="learning_project.php">
+            <div>
+            <tbody id="brandedcloth" >
+              <tr>
+                <td class="text-with-img">
+                  <img src="/MALL/brandedshirt.png" alt="" /><span>Branded Shirt</span>
+                </td>
+                <td><span id="dollar1a">1500</span></td>
+                <td>
+                  <div class="quantity-input">
+                    <button class="ccc1"  id="a">-</button>
+                   
+                      <input type="number" name="cc1" id="cc1" value="0" readonly  min="0"/>
+                      
+                    <button id="A">+</button>
+                  </div>
+                </td>
+                <td><p id="dollar1">0</p></td>
+                <td>
+                 <button id="r1"><i class="fa fa-remove icon custom-delete-button" ></i></button>
+                </td>
+              </tr>
+              <tr>
+                <td class="text-with-img">
+                  <img src="/MALL/lycrapant.jpg" alt="" /><span>Pant</span>
+                </td>
+                  <td><span id="dollar1b">999</span></td>
+                <td>
+                  <div class="quantity-input">
+                    <button id="b">-</button>
+                     <input type="text" name="cc2" id="cc2" value="0" min="1" readonly>
+                   
+                  
+                   
+                    <button id="B">+</button>
+                  </div>
+                </td>
+                 <td><p id="dollar2">0</p></td><td>
+                  <button id="r2"><i class="fa fa-remove icon custom-delete-button" ></i></button>
+                </td>
+              </tr>
+              <tr>
+                <td class="text-with-img">
+                  <img src="/MALL/gucci.jpg" alt="" /><span>T Shirt</span></span>
+                </td>
+    <td><span id="dollar1c">1999</span></td>
+                <td>
+                  <div class="quantity-input">
+                    <button id="c">-</button>
+                   <input type="text" id="cc3"name="cc3" value="0" readonly>
+                    <button id="C">+</button>
+                  </div>
+                </td>
+                  <td><p id="dollar3">0</p></td>
+                <td>
+                   <button id="r3"><i class="fa fa-remove icon custom-delete-button" id="r3"></i></button>
+                </td>
+              </tr>
+              <tr>
+                <td class="text-with-img">
+                  <img src="/MALL/nikeshoes.jpg" alt="" />Shoes<span></span>
+                </td>
+    <td><span id="dollar1d">21000</span></td>
+                <td>
+                  <div class="quantity-input">
+                    <button id="d">-</button>
+                      <input type="text" id="cc4" value="0" readonly>
+                    <button id="D">+</button>
+                  </div>
+                </td>
+                  <td><p id="dollar4">0</p></td>
+                <td>
+                   <button id="r4"><i class="fa fa-remove icon custom-delete-button" id="r4"></i></button>
+                </td>
+              </tr>
+              <tr>
+                <td class="text-with-img">
+                  <img src="/MALL/nikelengo.jpg" alt="" /><span>Lengo</span>
+                </td>
+                 <td><span id="dollar1e">1299</span></td>
+                <td>
+                  <div class="quantity-input">
+                    <button id="e">-</button>
+    <input type="text" id="cc5" value="0" readonly >
+                    <button id="E">+</button>
+                  </div>
+                </td>
+              <td><p id="dollar5">0</p></td>
+                <td>
+                    <button id="r5" onclick="clearResult1()"><i class="fa fa-remove icon custom-delete-button" id="r5"></i></button>
+                </td>
+              </tr>
+                            <tr>
+                             <td><button type="submit">SUBMIT</button></td>
+                            </tr>
+            </tbody>
+           </table>
+           
+           
+             <div id="summerclo" hidden>
+          
+          <table  border="0">
+            
+                 
+          
+            
+            <tbody>
+              <tr>
+                <td class="text-with-img">
+                  <img src="/MALL/summershirt.jpg" alt="" /><span>Summer Shirt</span>
+                </td>
+                <td><span id="dollar1aa">550</span></td>
+                <td>
+                  <div class="quantity-input">
+                    <button class="ccc1"  id="aa">-</button>
+                      <input type="number" id="ccc1" value="0" readonly  min="0"/>
+                      
+                    <button id="Aa">+</button>
+                  </div>
+                </td>
+                <td><p id="dollar11">0</p></td>
+                <td>
+                 <button id="r1"><i class="fa fa-remove icon custom-delete-button" ></i></button>
+                </td>
+              </tr>
+              <tr>
+                <td class="text-with-img">
+                  <img src="/MALL/cargopant.png" alt="" /><span>Pant</span>
+                </td>
+                  <td><span id="dollar1bb">899</span></span></td>
+                <td>
+                  <div class="quantity-input">
+                    <button id="bb">-</button>
+                     <input type="text" id="ccc2" value="0" min="1" readonly>
+                    <button id="Bb">+</button>
+                  </div>
+                </td>
+                 <td><p id="dollar22">0</p></td><td>
+                  <button id="r2"><i class="fa fa-remove icon custom-delete-button" ></i></button>
+                </td>
+              </tr>
+              <tr>
+                <td class="text-with-img">
+                  <img src="/MALL/summertshirt.jpg" alt="" /><span>Summer T Shirt</span></span>
+                </td>
+    <td><span id="dollar1cc">750</span></td>
+                <td>
+                  <div class="quantity-input">
+                    <button id="cc">-</button>
+                   <input type="text" id="ccc3" value="0" readonly>
+                    <button id="Cc">+</button>
+                  </div>
+                </td>
+                  <td><p id="dollar33">0</p></td>
+                <td>
+                   <button id="r3"><i class="fa fa-remove icon custom-delete-button" id="r3"></i></button>
+                </td>
+              </tr>
+              <tr>
+                <td class="text-with-img">
+                  <img src="/MALL/summershoes.jpg" alt="" />Shoes<span></span>
+                </td>
+    <td><span id="dollar1dd">989</span></td>
+                <td>
+                  <div class="quantity-input">
+                    <button id="dd">-</button>
+                      <input type="text" id="ccc4" value="0" readonly>
+                    <button id="Dd">+</button>
+                  </div>
+                </td>
+                  <td><p id="dollar44">0</p></td>
+                <td>
+                   <button id="r4"><i class="fa fa-remove icon custom-delete-button" id="r4"></i></button>
+                </td>
+              </tr>
+              <tr>
+                <td class="text-with-img">
+                  <img src="/MALL/summerlengo.jpg" alt="" /><span>Lengo</span>
+                </td>
+                 <td><span id="dollar1ee">799</span></td>
+                <td>
+                  <div class="quantity-input">
+                    <button id="ee">-</button>
+    <input type="text" id="ccc5" value="0" readonly >
+                    <button id="Ee">+</button>
+                  </div>
+                </td>
+              <td><p id="dollar55">0</p></td>
+                <td>
+                    <button id="r5" onclick="clearResult1()"><i class="fa fa-remove icon custom-delete-button" id="r5"></i></button>
+                </td>
+              </tr>
+                            <tr>
+                <td>><button type="submit">SUBMIT</button></td>
+              </tr>
+            </tbody>
+            </div>
+            
+            
+          </table>
+         </div>
+         
+          <div id="wintercloth" hidden>
+          
+          <table  border="0">
+            
+                 
+          
+            
+            <tbody>
+              <tr>
+                <td class="text-with-img">
+                  <img src="/MALL/hoodie.jpg" alt="" /><span>HOODIE</span>
+                </td>
+                <td><span id="dollar1aaa">1599</span></span></td>
+                <td>
+                  <div class="quantity-input">
+                    <button class="ccc1"  id="aaa">-</button>
+                      <input type="number" id="cccc1" value="0" readonly  min="0"/>
+                      
+                    <button id="Aaa">+</button>
+                  </div>
+                </td>
+                <td><p id="dollar111">0</p></td>
+                <td>
+                 <button id="r1"><i class="fa fa-remove icon custom-delete-button" ></i></button>
+                </td>
+              </tr>
+              <tr>
+                <td class="text-with-img">
+                  <img src="/MALL/pant.jpg" alt="" /><span>Pant</span>
+                </td>
+                  <td><span id="dollar1bbb">2299</span></td>
+                <td>
+                  <div class="quantity-input">
+                    <button id="bbb">-</button>
+                     <input type="text" id="cccc2" value="0" min="1" readonly>
+                    <button id="Bbb">+</button>
+                  </div>
+                </td>
+                 <td><p id="dollar222">0</p></td><td>
+                  <button id="r2"><i class="fa fa-remove icon custom-delete-button" ></i></button>
+                </td>
+              </tr>
+              <tr>
+                <td class="text-with-img">
+                  <img src="/MALL/wintertshirt.jpg" alt="" /><span>T Shirt</span></span>
+                </td>
+    <td><span id="dollar1ccc">599</span></td>
+                <td>
+                  <div class="quantity-input">
+                    <button id="ccc">-</button>
+                   <input type="text" id="cccc3" value="0" readonly>
+                    <button id="Ccc">+</button>
+                  </div>
+                </td>
+                  <td><p id="dollar333">0</p></td>
+                <td>
+                   <button id="r3"><i class="fa fa-remove icon custom-delete-button" id="r3"></i></button>
+                </td>
+              </tr>
+              <tr>
+                <td class="text-with-img">
+                  <img src="/MALL/shoes.jpg" alt="" />Shoes<span></span>
+                </td>
+    <td><span id="dollar1ddd">1499</span></td>
+                <td>
+                  <div class="quantity-input">
+                    <button id="ddd">-</button>
+                      <input type="text" id="cccc4" value="0" readonly>
+                    <button id="Ddd">+</button>
+                  </div>
+                </td>
+                  <td><p id="dollar444">0</p></td>
+                <td>
+                   <button id="r4"><i class="fa fa-remove icon custom-delete-button" id="r4"></i></button>
+                </td>
+              </tr>
+              <tr>
+                <td class="text-with-img">
+                  <img src="/MALL/lengo.jpg" alt="" /><span>Lengo</span>
+                </td>
+                 <td><span id="dollar1eee">699</span></td>
+                <td>
+                  <div class="quantity-input">
+                    <button id="eee">-</button>
+    <input type="text" id="cccc5" value="0" readonly >
+                    <button id="Eee">+</button>
+                  </div>
+                </td>
+              <td><p id="dollar555">0</p></td>
+                <td>
+                    <button id="r5" onclick="clearResult1()"><i class="fa fa-remove icon custom-delete-button" id="r5"></i></button>
+                </td>
+              </tr>
+              <tr>
+                <td>><button type="submit">SUBMIT</button></td>
+              </tr>
+            </tbody>
+           
+           
+            </table>
+             
+            
+            
+        </div>
+      </div>
+       
+      </form>
+      
+    <!--  <button onclick="show()">show</button>
+            <button onclick="hide()">hide</button>-->
+      
+     <!-- <button id="summmm">summer</button>-->
+     
+     <div id="pay" hidden>
+      <h2 id="pay_with">PAY WITH</h2>
+      
+     <a id="google" href="https://pay.google.com/about/"> <img height="100px" class="pay google_pay" src="/images/google_pay.jpg" alt=""></a>
+      
+      
+      
+      <a id="phonepe" href="https://www.phonepe.com/">
+     <img  height="100px" class="pay phone_pe" src="/images/phone_pe.jpg" alt="/images/phone_pe.jpg">
+     </a>
+    <h3 id="oR" class="or">OR</h3>
+    
+    <p id="qr_code" hidden><img src="/images/qr.jpg" height="300px" alt=""></p>
+    
+    
+    
+        <button id="qr" onclick="qr()">OR SCAN QR CODE</button>
+     <button id="back" onclick="back()">BACK</button>
+
+     </div>
+     
+     <div  class="wid-25 arrange-left">
+        <div class="cart-summary-wrapper">
+          <div id="checkout">
+            
+            
+       
+          <button  id="con" type="button">Get Amount</button>
+          <p id="demo">
+            
+          </p>
+          <div class="coupon-inputs">
+            <input type="text" placeholder="Enter Coupon" id="couponin"/>
+            <button onclick="coupon()" id="coupon">Apply coupon</button>
+            <p id="demo"></p>
+          </div>
+          <div class="cart-summary-body">
+            <div class="cart-summy-item">
+              <h6 id="sub-total">Sub Total</h6>
+           <span id="sub-count">0</span>
+          
+           
+            </div>
+            <div class="cart-summy-item">
+              <h6 id="shipping">Shipping</h6>
+            <p id="shiping-count">110</p>
+              
+            </div>
+          </div>
+          <div class="total-wrapper">
+            <div class="total-head">
+              <h4 id="discount">Discount persentage</h4>
+              
+              <p id="dis_count">0</p>
+            <h4 id="total-bill">Total</h4>
+              <p id="total-count">0</p>
+            </div>
+            <div class="proceed-input">
+              <button id="myBtn" onclick="bill(); checkout()">Proceed To Checkout</button>
+              <p id="demo"></p>
+              
+                
+              </div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="wrapper next-row">
+      <div class="footer">
+        <div class="wid-25 arrange-left margin-right-5">
+          <div class="logo">
+            <h1><span>KER'S</span><span>MALL</span></h1>
+          </div>
+          <p class="footer-desc">
+            Dolore erat dolor sit lorem vero amet. Sed sit lorem magna, ipsum
+            no sit erat lorem et magna ipsum dolore amet erat.
+          </p>
+          <ul class="contact-list">
+            <li>
+              <i class="fa fa-map-marker-alt icon"></i>123 Street, New York,
+              USA
+            </li>
+            <li><i class="fa fa-envelope icon"></i>info@example.com</li>
+            <li><i class="fa fa-phone icon"></i>+012 345 67890</li>
+          </ul>
+        </div>
+        <div class="wid-25 quick-links arrange-left">
+          <h3>Quick Links</h3>
+          <ul>
+            <li>
+              <a href=""><i class="fa fa-angle-right"></i><span>Home</span></a>
+            </li>
+            <li>
+              <a href=""><i class="fa fa-angle-right"></i><span>Our Shops</span></a>
+            </li>
+            <li>
+              <a href=""><i class="fa fa-angle-right"></i><span>Shop Details</span></a>
+            </li>
+            <li>
+              <a href=""><i class="fa fa-angle-right"></i><span>Checkout</span></a>
+            </li>
+            <li>
+              <a href=""><i class="fa fa-angle-right"></i><span>About Us</span></a>
+            </li>
+            <li>
+              <a href=""><i class="fa fa-angle-right"></i><span>Cart</span></a>
+            </li>
+          </ul>
+        </div>
+        <div class="wid-25 quick-links arrange-left">
+          <h3>Quick Links</h3>
+          <ul>
+            <li>
+              <a href=""><i class="fa fa-angle-right"></i><span>Home</span></a>
+            </li>
+            <li>
+              <a href=""><i class="fa fa-angle-right"></i><span>Our Shops</span></a>
+            </li>
+            <li>
+              <a href=""><i class="fa fa-angle-right"></i><span>Shop Details</span></a>
+            </li>
+            <li>
+              <a href=""><i class="fa fa-angle-right"></i><span>Checkout</span></a>
+            </li>
+            <li>
+              <a href=""><i class="fa fa-angle-right"></i><span>About Us</span></a>
+            </li>
+            <li>
+              <a href=""><i class="fa fa-angle-right"></i><span>Cart</span></a>
+            </li>
+          </ul>
+        </div>
+        <div class="wid-25 arrange-left">
+        <div class="mail">
+<h1 id="h1">Enter Email</h1>
+<form name="form1" action="#" onsubmit="required()" action="learning_project1.js">
+
+<input id="text1" type='text' name ='text1'/ required>
+
+<input id="submit" class="common-btnn" type="submit" name="submit" value="Submit" onclick="mail()" />
+
+</form>
+</div>
+        </div>
+      </div>
+    </div>
+    <div class="copy-right">
+      <div>
+
+        © <b>Learning Project</b>. All Rights Reserved. Designed by
+        <b>Adil Ker</b>
+      </div>
+      <img src="./payments.png" alt="" />
+    </div>
+  </div>
+  <!--<button id="v">value</button>-->
+  <!--<img src=/images/makhi.jpg alt="" height="480px"/>-->
+<!--  <script>
+  function searchBox() {
+    var x = document.getElementById('text').value;
+    var y = document.getElementById('keyword_searcher1');
+    if (x.length > 0) {
+      y.style.display = 'block';
+    } else {
+      y.style.display = 'none';
+    }
+  }
+  
+  document.getElementById("text").addEventListener("onkeyup", function() {
+    searchBox();
+  });
+</script>-->
+
+<script>
+  function required()
+  {
+    var empt = document.form1.text1.value;
+    if (empt === "")
+    {
+      alert("Please Enter Email First");
+      return false;
+    }
+    else
+    {
+      alert(empt + " " + " " +'Your Email Accepted');
+      return true;
+    }
+  }
+</script>
+
+
+  <script src="learning_project.js"></script>
+   <!-- <script src="learning_project1.js"></script>-->
+  <!--<script>
+  document.getElementById("sub").addEventListener("click",function(){
+  alert("Your order is successfully placed ")
+}) 
+
+    para.addEventListener('click', function(){
+  document.querySelector('.para1').innerHTML = "<b> Clicked </b>"
+});
+  </script>-->
+</body>
+
+</html>
